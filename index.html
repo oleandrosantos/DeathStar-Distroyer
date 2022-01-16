@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8" />
@@ -6,8 +7,6 @@
 
     <title>Distroyer DeathStar</title>
 
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="src/main.js"></script>
     <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
@@ -17,21 +16,64 @@
         <h3>Turno X - Ação espaconave</h3>
       </header>
       <main class="">
-        <div class="game-area">
-          <p id="life">Life: 3</p>
-          <div class="navs">
-            <icon><img class="spacenav xwing" src="src/imgs/xwing.png" /></icon>
-            <icon
-              ><img class="spacenav deatstar" src="src/imgs/deatstar.png"
-            /></icon>
+        <section id="regras-do-jogo">
+          <h3>Regras do Jogo!</h3>
+          <p>
+            Seu objetivo neste jogo é destruir a estrela da morte, este jogo
+            esta divido em turnos, cada turno tera um cenario e o jogador dera
+            ter ação conforme cada cenario
+          </p>
+          <div class="table-guide">
+            <table class=>
+              <tr>
+                <th>Cenario</th>
+                <th>Ação</th>
+                <th>Penalidade</th>
+              </tr>
+              <tr>
+                <td>Tie-Fighter Atacando</td>
+                <td>Desviar</td>
+                <td>Perde 1 vida</td>
+              </tr>
+              <tr>
+                <td>Canhão de Plasma atacando</td>
+                <td>Atirar</td>
+                <td>Perde 1 vida</td>
+              </tr>
+              <tr>
+                <td>Corredor Livre</td>
+                <td>Acelerar</td>
+                <td>Perde 1 vida</td>
+              </tr>
+              <tr>
+                <td>Ponto Fraco a frente</td>
+                <td>Atirar</td>
+                <td></td>
+              </tr>
+            </table>
           </div>
-        </div>
+          <button onclick="iniciarJogo()">Novo jogo</button>
+          <button onclick="iniciarJogo(true)">Resetar</button>
+        </section>
+        <section id="game">
+          <h2 id="cenario">Cenario</h2>
+          <p id="moviments">0 - Movimentos</p>
+          <p id="life">Life</p>
+          <div>
+            <button onclick="acelerar()">Acelerar</button>
+            <button onclick="atirar()">Atirar</button>
+            <button onclick="desviar()">Desviar</button>
+          </div>
+          <p id="Descricao"></p>
+        </section>
       </main>
-      <footer class="comandos">
-        <button onclick="desviar()">Desviar</button>
-        <button id="atirar" onclick="atirar()">Atirar</button>
-        <button onclick="acelerar()">Acelerar</button>
-      </footer>
     </div>
+    <section>
+      <div id="ResultadoGame">
+        <p>Voce Ganhou ou perdeu!!!</p>
+      </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="src/main.js"></script>
   </body>
 </html>
