@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Distroyer DeathStar</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="src/main.js"></script>
+    <link rel="stylesheet" href="src/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="">
+        <h2>Death Star Distroyers</h2>
+        <h3>Turno X - Ação espaconave</h3>
+      </header>
+      <main class="">
+        <div class="game-area">
+          <p id="life">Life: 3</p>
+          <div class="navs">
+            <icon><img class="spacenav xwing" src="src/imgs/xwing.png" /></icon>
+            <icon
+              ><img class="spacenav deatstar" src="src/imgs/deatstar.png"
+            /></icon>
+          </div>
+        </div>
+      </main>
+      <footer class="comandos">
+        <button onclick="desviar()">Desviar</button>
+        <button id="atirar" onclick="atirar()">Atirar</button>
+        <button onclick="acelerar()">Acelerar</button>
+      </footer>
+    </div>
+  </body>
+</html>

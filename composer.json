@@ -1,0 +1,27 @@
+{
+    "name": "leandro/death-star-distroyer",
+    "description": "Game, destroyer death star",
+    "type": "project",
+    "require": {
+        "php": "7.4.*",
+        "league/route": "^5.1",
+        "laminas/laminas-diactoros": "^2.8",
+        "laminas/laminas-httphandlerrunner": "^2.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Api\\": "Api/Class",
+            "Api\\Controller\\": "Api/Controller"
+        }
+    },
+    "authors": [
+        {
+            "name": "Leandro Santos",
+            "email": "leandrooliveira574@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}
