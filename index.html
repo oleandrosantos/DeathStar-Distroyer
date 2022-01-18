@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
-    <div class="container">
+    <div>
       <header class="">
         <h2>Death Star Distroyers</h2>
         <h3>Turno X - Ação espaconave</h3>
@@ -52,8 +52,8 @@
               </tr>
             </table>
           </div>
-          <button onclick="iniciarJogo()">Novo jogo</button>
-          <button onclick="iniciarJogo(true)">Resetar</button>
+
+          <button onclick="resetar()">Resetar</button>
         </section>
         <section id="game">
           <h2 id="cenario">Cenario</h2>
@@ -68,9 +68,17 @@
         </section>
       </main>
     </div>
-    <section>
-      <div id="ResultadoGame">
-        <p>Voce Ganhou ou perdeu!!!</p>
+    <section id="ResultadoGame">
+        <div class="container-fimdejogo">
+          <h1 id="resultGame">Parabéns!! Você venceu!</h1>
+          <p id="mensagemFimdeJogo">
+            Voce conseguiu realizar
+          </br>
+            Deseja Iniciar um novo jogo?</p>
+          <div>
+            <button onclick="resetar()">Sim</button>
+            <button>Não</button>
+        </div>
       </div>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

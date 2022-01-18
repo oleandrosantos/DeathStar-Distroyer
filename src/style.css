@@ -4,8 +4,8 @@
   box-sizing: border-box;
 }
 body {
-  background: linear-gradient(#cccccc, #dddddd);
-  height: 99vh;
+  background: #cccccc;
+  height: 95vh;
   text-align: center;
   display: grid;
   justify-items: center;
@@ -16,9 +16,11 @@ p {
 }
 main {
   max-width: 50rem;
+  height: 90vh;
 }
 header {
-  max-width: 50rem;
+  height: 5vh;
+  max-width: 100vw;
 }
 th,
 tr,
@@ -44,10 +46,18 @@ button {
   justify-content: center;
 }
 #ResultadoGame {
-  background-color: #d1ff29;
-  position: fixed;
-  margin: -83vh -50vw;
-  z-index: 1;
-  width: 100vw;
-  height: 100vh;
+  display: none;
+  background-color: #cccccc;
+  position: relative;
+  margin: -100vh 0;
+  padding: 0;
+  width: 90vw;
+  height: 90vh;
+}
+.container-fimdejogo {
+  display: inline-grid;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  height: 100%;
 }

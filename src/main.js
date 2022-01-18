@@ -2,6 +2,7 @@ let dadosApi = [];
 var vida = 3;
 var moviments = 0;
 cenario = document.getElementById('cenario');
+iniciarJogo();
 
 function gerar() {
   if (dadosApi.length == 0)
@@ -22,19 +23,20 @@ function gerar() {
   }
 }
 
-function iniciarJogo(reset = false) {
-  if (reset) {
-    document.getElementById('Descricao').innerHTML = "";
-    life = 3;
-    moviments = 0;
-    dadosApi.splice(0, dadosApi.length);
-  } else {
-    descricaoTurno("Bem vindo Capitão!");
-    descricaoTurno("Vamos começar um novo jogo!");
-    gerar();
-  }
+function iniciarJogo() {
+  document.querySelector('#ResultadoGame').style.display = 'none';
+  descricaoTurno("Bem vindo Capitão!");
+  descricaoTurno("Vamos começar um novo jogo!");
+  gerar();
   showLife();
+}
 
+function resetar() {
+  vida = 3;
+  moviments = 0;
+  dadosApi.splice(0, dadosApi.length);
+  descricaoTurno("");
+  iniciarJogo();
 }
 
 function remover() {
@@ -70,7 +72,7 @@ function atirar() {
     descricaoTurno("atirar não surtiu efeito e fomos atingidos!!");
   } else {
     if (dadosApi[0].codigoCenarioXwing == 3) {
-      alert("Ganhamos!!!");
+      endGame(true);
     }
     descricaoTurno("Conseguimos Atigir o alvo Capitão!");
   }
@@ -83,18 +85,29 @@ function definirCenario() {
 
 function showLife(loser = false) {
   if (loser) {
-    vida--
+    vida--;
   }
   contentLife = document.getElementById("life");
   if (vida <= 0) {
-    newgame = window.confirm("GAME OVER!");
-    if (newgame === true) {
-      life = 3;
-    }
+    endGame();
   }
   contentLife.innerHTML = `Life: ${vida}`;
 }
 
+//finaliza o jogo criando um poup-up
+function endGame(winGame = false) {
+  if (winGame) {
+
+  } else {
+    document.getElementById('resultGame').innerHTML = "GAME OVER!";
+    document.getElementById('mensagemFimdeJogo').innerHTML = ` Voce conseguiu realizar ${moviments} - Movimentos </br> Deseja Reiniciar o jogo? `;
+  }
+  descricaoTurno("");
+  document.querySelector('#ResultadoGame').style.display = 'block';
+
+}
+
+//Gera um novo cenario e imprime na tela
 function novoCenario() {
   moviments++;
   document.getElementById('moviments').innerHTML = `${moviments} - Movimentos`;
@@ -103,6 +116,11 @@ function novoCenario() {
   gerar();
 }
 
+//imprime a descrição do que esta ocorrendo na 
 function descricaoTurno(texto) {
-  document.getElementById('Descricao').insertAdjacentHTML('beforeend', `${texto}</br>`);
+  if (texto === "") {
+    document.getElementById('Descricao').innerHTML = "";
+  } else {
+    document.getElementById('Descricao').insertAdjacentHTML('beforeend', `${texto}</br>`);
+  }
 }
