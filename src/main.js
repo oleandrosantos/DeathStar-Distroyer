@@ -36,6 +36,7 @@ function resetar() {
   moviments = 0;
   dadosApi.splice(0, dadosApi.length);
   descricaoTurno("");
+  exibirMoviments();
   iniciarJogo();
 }
 
@@ -110,7 +111,7 @@ function endGame(winGame = false) {
 //Gera um novo cenario e imprime na tela
 function novoCenario() {
   moviments++;
-  document.getElementById('moviments').innerHTML = `${moviments} - Movimentos`;
+  exibirMoviments();
   remover();
   showLife();
   gerar();
@@ -123,4 +124,8 @@ function descricaoTurno(texto) {
   } else {
     document.getElementById('Descricao').insertAdjacentHTML('beforeend', `${texto}</br>`);
   }
+}
+
+function exibirMoviments() {
+  document.getElementById('moviments').innerHTML = `${moviments} - Movimentos`;
 }
