@@ -98,6 +98,8 @@ function showLife(loser = false) {
 //finaliza o jogo criando um poup-up
 function endGame(winGame = false) {
   if (winGame) {
+    document.getElementById('resultGame').innerHTML = "Parabéns!! Você venceu!";
+    document.getElementById('mensagemFimdeJogo').innerHTML = `Voce conseguiu realizar</br> Deseja Iniciar um novo jogo? `;
 
   } else {
     document.getElementById('resultGame').innerHTML = "GAME OVER!";
