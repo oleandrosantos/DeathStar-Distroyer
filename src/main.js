@@ -1,12 +1,13 @@
 let dadosApi = [];
-var vida = 3;
-var moviments = 0;
+let vida = 3;
+let moviments = 0;
+let urlApi = 'http://distroyer.oleandrosantos.me/Api/';
 cenario = document.getElementById('cenario');
 iniciarJogo();
 
 function gerar() {
   if (dadosApi.length == 0)
-    axios.get('http://localhost:8080/DeathStar-Distroyer/Api/')
+    axios.get(urlApi)
       .then(response => {
         (response.data).forEach(function (element) {
           dadosApi.push(element);
@@ -14,7 +15,7 @@ function gerar() {
         });
       });
   else {
-    axios.get(`http://localhost:8080/DeathStar-Distroyer/Api/1`)
+    axios.get(`${urlApi}1`)
       .then(response => {
         (response.data).forEach(function (element) {
           dadosApi.push(element);
